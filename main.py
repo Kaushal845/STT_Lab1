@@ -23,7 +23,7 @@ def squares(limit): #no docstring
 def main():  #no docstring
   print("Fibonacci numbers:") 
   for j in range(6):print(fibonacci(j)) #inline for-loop
-  welcome("Alex")
+  welcome("Kaushal")
   print("Subtract 10-4 =", subtract(10,4))
   print("Squares up to 5:")
   squares(5)
