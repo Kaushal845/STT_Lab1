@@ -1,49 +1,32 @@
-"""
-main.py
-Simple program for Lab 1.
-Demonstrates functions, loops, and basic calculations.
-"""
+# This file is written for Lab 1
+# It also has many pylint issues on purpose
 
 
-def add_numbers(a, b):
-    """Return the sum of two numbers."""
-    return a + b
+def subtract(a,b): #missing space s around comma
+ return a-b #bad indentation + missing spaces
 
 
-def multiply_numbers(a, b):
-    """Return the product of two numbers."""
-    return a * b
+def welcome(user): #no type hints
+  print("Welcome " + user) #wrong indentation, no docstring
 
 
-def greet_user(name):
-    """Return a greeting message for the given user."""
-    return f"Hello, {name}!"
+def fibonacci(n):
+ if n<=1: return n #inline if
+ else: 
+   return fibonacci(n-1)+fibonacci(n-2) #inconsistent indent
 
 
-def main():
-    """Main function to run the program."""
-    print("Welcome to the Lab 1 Python Program")
-    print("-" * 40)
-
-    # Greeting
-    print(greet_user("Alice"))
-    print(greet_user("Bob"))
-
-    # Arithmetic examples
-    print("5 + 3 =", add_numbers(5, 3))
-    print("4 * 7 =", multiply_numbers(4, 7))
-
-    # Loop example
-    print("Squares of numbers 1 to 5:")
-    for i in range(1, 6):
-        print(i, "squared is", multiply_numbers(i, i))
-
-    # Small list example
-    fruits = ["apple", "banana", "cherry"]
-    print("Fruit list:")
-    for fruit in fruits:
-        print("-", fruit)
+def squares(limit): #no docstring
+ for i in range(limit):print(i*i) #inline for-loop
 
 
-if __name__ == "__main__":
-    main()
+def main():  #no docstring
+  print("Fibonacci numbers:") 
+  for j in range(6):print(fibonacci(j)) #inline for-loop
+  welcome("Alex")
+  print("Subtract 10-4 =", subtract(10,4))
+  print("Squares up to 5:")
+  squares(5)
+
+
+main() #should use __main__ guard
